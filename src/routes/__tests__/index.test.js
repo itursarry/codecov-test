@@ -1,7 +1,4 @@
-var express = require('express');
-var router = express.Router();
-
-var indexRouter = require('../index');
+var index = require('../index');
 
 const mockResponse = {
   send: jest.fn((exchangeRateResponse) => {
@@ -12,10 +9,8 @@ const mockResponse = {
 
 describe('index', () => {
 
-
   test('happy path', async () => {
-
-      //const exchangeRate = await indexRouter({}, mockResponse);
-      //expect(mockResponse).toBe(14.5);
+      index(null, mockResponse);
+      expect(mockResponse.send).toBeCalled()
   });
 });

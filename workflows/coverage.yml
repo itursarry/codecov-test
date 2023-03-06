@@ -1,5 +1,10 @@
 name: 'pull-request'
-on: [push, pull_request]
+
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   pr_build_with_tests:
